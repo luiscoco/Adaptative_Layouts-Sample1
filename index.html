@@ -1,0 +1,36 @@
+<h2 class="devicePixelRatio"></h2>
+
+<h2 class="resolution"></h2>
+<h2 class="available-resolution"></h2>
+<h2 class="realPixels"></h2>
+<h2 class="client"></h2>
+
+<script>
+    document.querySelector(
+        ".devicePixelRatio"
+    ).innerHTML = `<pre>Pixel ratio: ${window.devicePixelRatio}</pre>`;
+
+    // "virtual pexels" resolution
+    document.querySelector(".resolution").innerHTML = `<pre>
+CSS pixels screen width: ${window.screen.width}px
+CSS pixels screen height: ${window.screen.height}px
+</pre>`;
+
+    document.querySelector(".available-resolution").innerHTML = `<pre>
+CSS available pixels screen width: ${window.screen.availWidth}px
+CSS available pixels screen height: ${window.screen.availHeight}px
+</pre>`;
+    // windows taskbar eats some vertical space
+
+    document.querySelector(".realPixels").innerHTML = `<pre>
+Physical pixels screen width: ${window.devicePixelRatio * window.screen.width}px
+Physical pixels screen screen height: ${window.devicePixelRatio * window.screen.height
+        }px
+</pre>`;
+
+    document.querySelector(".client").innerHTML = `<pre>
+Client screen width: ${document.documentElement.clientWidth}px
+Client screen height: ${document.documentElement.clientHeight}px
+</pre>`;
+
+</script>
